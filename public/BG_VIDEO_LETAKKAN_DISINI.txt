@@ -1,6 +1,0 @@
-Taruh file video background kamu di folder public/ ini dengan nama: bg-video.mp4
-Contoh path lengkap: public/bg-video.mp4
-
-Video ini akan tampil di SEMUA halaman (Intro, Portfolio, Project Detail)
-sebagai background dengan opacity rendah (0.07). Kalau mau lebih terang/gelap,
-tinggal ubah nilai "opacity" pada class .bg-video di file src/App.css
