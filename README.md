@@ -1,23 +1,69 @@
-# Valitudo AI — React UI/UX v3
+# Portfolio — Arya Kusuma
 
-This revision focuses on the requested UI/UX refinements:
+Interactive portfolio website built with **React + Vite**.
 
-- Reduced the white gutter between the fixed sidebar and main content.
-- Replaced article placeholder color blocks with real human/food photography loaded from Unsplash image URLs.
-- Added full article detail pages with real article content.
-- Clicking any article card opens its article page.
-- Added a smooth login/register → home transition with welcome animation.
-- Added route transition animation for page changes.
-- Added scroll-reveal animations using IntersectionObserver.
-- Preserved the Valitudo sidebar, banner, cards, and overall visual language from the supplied design.
+## Cara pakai
 
-## Run
+### 1. Install dependencies
 
 ```bash
 npm install
+```
+
+### 2. Jalankan dev server
+
+```bash
 npm run dev
 ```
 
-The article photographs use remote Unsplash image URLs, so an internet connection is required for those images to load.
+Buka `http://localhost:5173` di browser.
 
-Authentication remains a frontend demo using localStorage/sessionStorage; it can later be connected to a real backend or Firebase/Supabase.
+### 3. Build untuk production
+
+```bash
+npm run build
+```
+
+Output ada di folder `dist/` — tinggal deploy ke Vercel, Netlify, atau hosting apapun.
+
+---
+
+## Struktur file
+
+```
+src/
+├── App.jsx                   # Root: intro vs portfolio state
+├── App.css
+├── index.css                 # Global reset
+├── main.jsx
+├── hooks/
+│   └── useTypewriter.js      # Typing animation hook
+└── components/
+    ├── Cursor.jsx             # Blinking cursor
+    ├── Cursor.module.css
+    ├── IntroScreen.jsx        # Layar awal + spam popup logic
+    ├── IntroScreen.module.css
+    ├── SpamPopup.jsx          # Satu popup spam
+    ├── SpamPopup.module.css
+    ├── Portfolio.jsx          # Halaman portfolio
+    └── Portfolio.module.css
+```
+
+## Kustomisasi
+
+Edit `src/components/Portfolio.jsx` — ubah nama, daftar project, experience, dan stack sesuai data kamu.
+
+Edit `src/components/SpamPopup.jsx` — ubah teks-teks popup kalau mau.
+
+Edit `src/components/IntroScreen.jsx` line `useTypewriter(...)` — ubah pertanyaan opening.
+
+---
+
+## Deploy ke Vercel
+
+```bash
+npm i -g vercel
+vercel
+```
+
+Atau drag-drop folder `dist/` ke [netlify.com/drop](https://app.netlify.com/drop).
